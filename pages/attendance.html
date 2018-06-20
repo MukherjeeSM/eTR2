@@ -1,0 +1,96 @@
+  <div class="page" data-name="attendance">
+    <div class="navbar">
+        <div class="navbar-inner">
+          <div class="left">
+            <a href="#" class="link icon-only panel-open" data-panel="left">
+              <i class="icon f7-icons ios-only">menu</i>
+              <i class="icon material-icons md-only">menu</i>
+            </a>
+          </div>
+          <div class="title sliding">eTimeRegister</div>
+        </div>
+      </div>
+
+
+      <div class="toolbar toolbar-bottom-md" style="height: 80px;" >
+             <div class="toolbar-inner" style="height: 80px;">
+                     
+                      <div class="row " style="margin-left: 20px" >
+                         
+                           <button class="col button button-fill "  >
+                               <a href="/" >
+                               <img src="icons/home.png">
+                               </a>
+                           </button>
+                            </div>
+                            <div>
+                             <button class="col button button-fill " >
+                                <a href="/leave/">
+                                <img src="icons/leave.png">
+                                </a>
+                            </button>
+                            </div>
+                            <div style="margin-right: 20px">
+                            <button class="col button button-fill "> 
+                                 <a href="/discrepancies/" >
+                                 <img src="icons/discrepancy.png">
+                                </a>
+                            </button>
+                            </div>
+                       </div>
+                       
+                  <!-- </div> -->
+            </div>
+
+    
+
+      <div class="page-content">
+
+              <div class="block-title">
+              <span> Attendance</span>
+              <p></p>
+              <div class="row">
+              <div class="previous">
+
+              <button class="col button button-fill button-round" id="btnAjaxCall" style="width: auto; float: right;" 
+              onclick="CreateTableFromJSON()" >
+                      <img src="icons/prevoius.png">            
+              </button>
+              
+            </div>
+            <div class="next">
+              <button class="col button button-fill button-round" id="btnAjaxCallNext" style="width: auto; float: right;" 
+              onclick="CreateNextTableFromJSON()" >
+                  <img src="icons/next.png">           
+            </button>
+              </div>
+            </div>
+              </div>
+
+              <div class="data-table card">
+
+                <table id="table">
+                <thead>
+                  <tr id="headerTR" style="font-weight: bold;">
+                    <th class="label-cell">Date</th>
+                    <th class="numeric-cell">InTime</th>
+                    <th class="numeric-cell">OutTime</th>
+                  </tr>
+                </thead>
+                <tbody  id="showData">
+                  
+                </tbody>
+                </table>  
+                
+              </div>       
+             
+     </div>
+  </div>
+  
+
+  
+
+
+
+
+   

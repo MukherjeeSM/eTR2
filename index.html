@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <title>eTimeRegister</title>
+  <link rel="stylesheet" href="../build/css/framework7.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="apple-touch-icon" href="img/f7-icon-square.png">
+  <link rel="icon" href="img/f7-icon.png">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/attendance.js"></script>
+  <script src="js/leaveBalance.js"></script>
+  <script src="js/discrepancies.js"></script>
+
+   <script>
+  $(document).on('page:init','.page[data-name="attendance"]', function(e){
+          count=0;
+           document.getElementById("btnAjaxCallNext").style.display="none";
+         CreateTableFromJSON();    
+    });
+
+  $(document).on('page:init','.page[data-name="leave"]', function(e){
+        
+         count1=0;
+
+         leaveprevioustable(); 
+
+           
+    });
+
+  $(document).on('page:init','.page[data-name="discrepancies"]', function(e){
+        
+         count2=0;
+         discrepanciesData();    
+    });
+
+</script> 
+</head>
+<body>
+  <div id="app">
+    <div class="statusbar"></div>
+    <div class="panel panel-left panel-cover">
+      <div class="page">
+        <div class="page-content">
+          <div class="block-title">VOITH</div>
+          
+          <div class="list links-list">
+            <ul>
+                     <li><a href="/" class="panel-close">Home</a></li>
+                      <li><a href="/attendance/" class="panel-close">Attendance</a></li>
+                      <li><a href="/leave/" class="panel-close">Leave</a></li>
+                      <li><a href="/discrepancies/" class="panel-close">Discrepancies</a></li>
+                      <li><a href="#" class="button popup-open" data-popup="#my-popup">Send Message</a></li>
+                      
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="view view-main view-init ios-edges" data-url="/">
+      <div class="page" dataname="home">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only panel-open" data-panel="left">
+                <i class="icon f7-icons ios-only">menu</i>
+                <i class="icon material-icons md-only">menu</i>
+              </a>
+            </div>
+            <div class="title sliding">eTimeRegister</div>
+           <div class="right" style="margin-right: 10px">
+            <img src="icons/voith5.png">
+            </div>
+          </div>
+        </div>
+        <div class="toolbar toolbar-bottom-md" style="height: 80px;" >
+             <div class="toolbar-inner" style="height: 80px;">
+                     
+                      <div class="row " style="margin-left: 20px" >
+                         
+                           <button class="col button button-fill "  >
+                               <a href="/attendance/" >
+                               <img src="icons/attendance.png">
+                               </a>
+                           </button>
+                            </div>
+                            <div>
+                             <button class="col button button-fill " >
+                                <a href="/leave/">
+                                <img src="icons/leave.png">
+                                </a>
+                            </button>
+                            </div>
+                            <div style="margin-right: 20px">
+                            <button class="col button button-fill "> 
+                                 <a href="/discrepancies/" >
+                                 <img src="icons/discrepancy.png">
+                                </a>
+                            </button>
+                            </div>
+                       </div>
+                       
+            </div>
+
+    
+
+        <div class="page-content">
+         <div class="block-title">
+               <span> Voith Digital Solutions India</span>
+                <p></p>
+               </div>
+                <div class="block block-strong">
+                    <p>Welcome to Voith</p>
+                </div>
+                 <div class="block">
+               <span> eTimeRegister is a mobile application for Voith employees which is built in purpose to provide a mobile view of their Attendance, Leave and Discrepancy records.
+                    Its main objective is to have a better accessibility of his/her records from anywhere .
+                  </span>
+                <p></p>
+               </div>
+            
+        </div>
+
+      </div>
+    </div>
+
+      <div class="popup" id="my-popup">
+            <div class="view">
+              <div class="page">
+                <div class="navbar">
+                  <div class="navbar-inner">
+                    <div class="title">Send Message</div>
+                    <div class="right">
+                      <a href="#" class="link popup-close">Close</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <p>Please write your message here.</p>
+                      <button class""="col button button-fill" style="
+                      position:relative;
+                      margin-top:330px;
+                      width: auto;
+                      float: right;">
+                        <a href="#" class="col button button-raised button-fill">
+                        <span>Send</span>
+                        </a>
+                        </button>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+  </div>
+  <script src="../build/js/framework7.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
